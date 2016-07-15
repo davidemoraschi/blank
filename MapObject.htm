@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+<object classid="9FD0251A-54CC-11D3-9F62-00C04F796AAD" width="200" height="200" id="Map"></object>
+<script language=vbscript>
+  Dim layer 'As MapObjectsLT2.MapLayer
+  'Set layer = New MapObjectsLT2.MapLayer
+  Set layer = CreateObject("MapObjectsLT2.MapLayer")
+  layer.File = "I:\My DropBox\Maps\Samples\Data\NorthEast\counties.shp"
+  If layer.Valid Then
+    With layer.Symbol
+      .Color = moPaleYellow
+     End With
+    Map.Layers.Add layer
+  End If
+  
+  Set layer = New MapObjectsLT2.MapLayer
+  layer.File = "I:\My DropBox\Maps\Samples\Data\NorthEast\NeCenter.shp"
+  If layer.Valid Then
+    With layer.Symbol
+      .Color = moBlue
+    End With
+    layer.Visible = False
+    Map.Layers.Add layer
+  End If
+  
+  Set layer = Nothing
+
+</script>
+</body>
+</html>
